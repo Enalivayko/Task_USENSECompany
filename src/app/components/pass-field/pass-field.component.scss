@@ -1,0 +1,49 @@
+input {
+  height: 30px;
+  border: 1px solid black;
+  border-radius: 2px;
+  padding: 0 5px;
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+.password-visibility {
+  cursor: pointer;
+  margin-top: 5px;
+  color: #007bff;
+  font-size: 12px;
+}
+
+.progress-bar {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+
+  span {
+    height: 3px;
+    border-radius: 20px;
+    width: 30px;
+    border: 1px solid darkgrey;
+    background: lightgray;
+  }
+
+  .easy {
+    background: red;
+  }
+
+  .medium {
+    background: darkorange;
+  }
+
+  .strong {
+    background: green;
+  }
+}
+
+.validation-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+

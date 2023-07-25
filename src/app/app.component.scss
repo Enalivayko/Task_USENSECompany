@@ -1,0 +1,21 @@
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .wrapper-input {
+    padding: 50px;
+    max-width: 300px;
+    border: 1px solid grey;
+    border-radius: 13px;
+    box-shadow: -1px 1px 8px 1px grey;
+    position: relative;
+  }
+
+  app-pass-field {
+    display: flex;
+    flex-direction: column;
+    width: 212px;
+  }
+
+}
