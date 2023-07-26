@@ -1,0 +1,25 @@
+.progress-bar {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+
+  span {
+    height: 3px;
+    border-radius: 20px;
+    width: 30px;
+    border: 1px solid darkgrey;
+    background: lightgray;
+}
+
+  .easy {
+    background: red;
+}
+
+  .medium {
+    background: darkorange;
+}
+
+  .strong {
+    background: green;
+}
+}

@@ -1,5 +1,7 @@
 <div class="content">
+
   <div class="wrapper-input">
-    <app-pass-field/>
+    <app-password-input (passwordStrengthUpdated) = "foo($event)"/>
+    <app-progress-bar [passwordStrength] = "passwordStrength" />
   </div>
 </div>

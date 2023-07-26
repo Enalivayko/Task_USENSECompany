@@ -1,22 +1,25 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
-import { AppComponent } from './app.component';
-import { PassFieldComponent } from './components/pass-field/pass-field.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {FormsModule} from "@angular/forms";
+import {AppComponent} from './app.component';
+import {PasswordInputComponent} from './components/password-input/password-input.component';
+import {PasswordStrengthService} from './services/password-strength/password-strength.service';
+import { ProgressBarComponent } from './components/progress-bar/progress-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PassFieldComponent
+    PasswordInputComponent,
+    ProgressBarComponent,
   ],
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        FormsModule
-    ],
-  providers: [],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
+  providers: [PasswordStrengthService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
