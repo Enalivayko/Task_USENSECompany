@@ -1,7 +1,6 @@
 <div class="content">
-
   <div class="wrapper-input">
-    <app-password-input (passwordStrengthUpdated) = "foo($event)"/>
-    <app-progress-bar [passwordStrength] = "passwordStrength" />
+    <app-password-input [(ngModel)]="passwordStrength" ></app-password-input>
+    <app-progress-bar [passwordStrength]="passwordStrength"></app-progress-bar>
   </div>
 </div>

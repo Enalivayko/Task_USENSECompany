@@ -1,6 +1,6 @@
-import {Component, EventEmitter, forwardRef, Input, OnInit, Output} from '@angular/core';
+import { Component, forwardRef } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { PasswordStrengthService } from '../../services/password-strength/password-strength.service';
-import {ControlValueAccessor,NG_VALUE_ACCESSOR} from "@angular/forms";
 
 @Component({
   selector: 'app-password-input',
@@ -14,23 +14,23 @@ import {ControlValueAccessor,NG_VALUE_ACCESSOR} from "@angular/forms";
     },
   ],
 })
-export class PasswordInputComponent {
+export class PasswordInputComponent implements ControlValueAccessor {
   password: string = '';
+  passwordStrength: string = '';
   showPassword: boolean = false;
   validationMessage: string = '';
-  @Output() passwordStrengthUpdated: EventEmitter<any> = new EventEmitter();
-
 
   constructor(private passwordStrengthService: PasswordStrengthService) {}
 
   handlePasswordChange() {
-    this.passwordStrengthUpdated.emit(this.passwordStrengthService.checkPasswordStrength(this.password));
+    this.passwordStrength = this.passwordStrengthService.checkPasswordStrength(this.password);
     this.updateValidationMessage();
+    this.onChange(this.passwordStrength);
+    this.onTouch();
   }
 
   togglePasswordVisibility() {
     this.showPassword = !this.showPassword;
-
   }
 
   updateValidationMessage() {
@@ -40,5 +40,19 @@ export class PasswordInputComponent {
       this.validationMessage = '';
     }
   }
-}
 
+  onChange: any = () => {};
+  onTouch: any = () => {};
+
+  writeValue(value: any): void {
+    this.password = value || '';
+  }
+
+  registerOnChange(fn: any): void {
+    this.onChange = fn;
+  }
+
+  registerOnTouched(fn: any): void {
+    this.onTouch = fn;
+  }
+}

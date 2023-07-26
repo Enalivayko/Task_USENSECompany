@@ -1,17 +1,10 @@
-import {Component, OnInit} from '@angular/core';
-import {FormControl} from "@angular/forms";
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
-export class AppComponent  {
-  passwordStrength:string = ''
-  title = 'angular_pass';
-
-  foo(passStyle:string ){
-    this.passwordStrength = passStyle
-  }
+export class AppComponent {
+  passwordStrength: string = '';
 }
-
